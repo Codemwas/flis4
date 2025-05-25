@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>System Info & Reports - Farmers Logistics</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <section class="reveal">
+        <h2>Why Farmers Logistics?</h2>
+        <p>We simplify transport, tracking, and payments.</p>
+    </section>
+
+    <header>
+        <h1>📊 System Information & Reports</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">🏠 Home</a></li>
+                <li><a href="reg.html">🧑‍🌾 Register</a></li>
+                <li><a href="product.html">🧺 Products</a></li>
+                <li><a href="order.html">🛒 Orders</a></li>
+                <li><a href="tracking.html">🚚 Track</a></li>
+                <li><a href="dashboard.html" class="active">📊 Reports</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>🌱 Summary of the System</h2>
+            <ul>
+                <li><strong>Registered Farmers:</strong> 15</li>
+                <li><strong>Total Orders Made:</strong> 42</li>
+                <li><strong>Successful Deliveries:</strong> 39</li>
+                <li><strong>Pending Orders:</strong> 3</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>📋 Farmer List</h2>
+            <table class="orders-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Product</th>
+                        <th>Location</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John Otieno</td>
+                        <td>Milk</td>
+                        <td>Kisumu</td>
+                    </tr>
+                    <tr>
+                        <td>Mary Wanjiku</td>
+                        <td>Tomatoes</td>
+                        <td>Naivasha</td>
+                    </tr>
+                    <!-- Add more rows as needed -->
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>📦 Order Records</h2>
+            <table class="orders-table">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Destination</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ORD001</td>
+                        <td>Milk</td>
+                        <td>30 Litres</td>
+                        <td>Nairobi</td>
+                        <td>Delivered</td>
+                    </tr>
+                    <tr>
+                        <td>ORD002</td>
+                        <td>Cabbages</td>
+                        <td>50 Heads</td>
+                        <td>Kisii</td>
+                        <td>Pending</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>📝 Generate Simple Report</h2>
+            <p>Click the button to get a summary report you can print or download.</p>
+            <button onclick="generateReport()">Generate Report</button>
+
+            <div id="report-output" class="report-box"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Farmers Logistics System | Developed by Mwashi Victor</p>
+    </footer>
+
+    <script>
+        // Year update
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        // Generate Report Function
+        function generateReport() {
+            const report = `
+      === FARMERS LOGISTICS REPORT ===
+
+      ➤ Total Registered Farmers: 15
+      ➤ Orders Made: 42
+      ➤ Delivered Orders: 39
+      ➤ Pending Deliveries: 3
+
+      ➤ Top Product: Milk
+      ➤ Most Active Region: Rift Valley
+
+      Report Generated On: ${new Date().toLocaleString()}
+    `;
+            document.getElementById("report-output").innerText = report;
+        }
+    </script>
+
+    <style>
+        .report-box {
+            white-space: pre-wrap;
+            margin-top: 20px;
+            background: #f0f9f0;
+            border: 1px solid #cceccc;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: monospace;
+        }
+    </style>
+
+</body>
+
+</html>
